@@ -10,7 +10,10 @@ export default function FormRender(props: any) {
     if (props.file) {
       const data = new FormData();
       data.append("file", props.file);
-      api.post("/sendFile", data).then((e) => props.setData(e.data));
+      api.post("/sendFile", data).then((e) => {
+        props.setData(e.data);
+        props.setError(false);
+      });
     }
   };
   return (

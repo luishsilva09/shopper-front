@@ -28,8 +28,8 @@ export default function TableRender({ data, setError }) {
             <tr key={index}>
               <td>{item.product_code}</td>
               <td>{item.data.name}</td>
-              <td>R$ {item.data.sales_price}</td>
-              <td>R$ {item.new_price}</td>
+              <td>R$ {Number(item.data.sales_price).toFixed(2)}</td>
+              <td>R$ {Number(item.new_price).toFixed(2)}</td>
               <td>{item.invalidElement == "Dados OK" ? "Ok" : ""}</td>
               <td>{typeof item.data == "string" ? "" : "OK"}</td>
               <td>{item.novoPreco == "Dados OK" ? "OK" : item.novoPreco}</td>
