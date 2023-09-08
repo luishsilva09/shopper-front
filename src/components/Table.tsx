@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { StatePropriesData } from "../services/interfaces";
 
-export default function TableRender({ data, setError }) {
+export default function TableRender({
+  data,
+  setError,
+}: React.PropsWithChildren<any>) {
   return (
     <Table>
       <tbody>
@@ -27,8 +30,13 @@ export default function TableRender({ data, setError }) {
           return (
             <tr key={index}>
               <td>{item.product_code}</td>
-              <td>{item.data.name}</td>
-              <td>R$ {Number(item.data.sales_price).toFixed(2)}</td>
+              <td>{item.data.name ? item.data.name : "Não existe"}</td>
+              <td>
+                R$
+                {Number(
+                  item.data.sales_price ? item.data.sales_price : 0
+                ).toFixed(2)}
+              </td>
               <td>R$ {Number(item.new_price).toFixed(2)}</td>
               <td>{item.invalidElement == "Dados OK" ? "Ok" : ""}</td>
               <td>{typeof item.data == "string" ? "" : "OK"}</td>
