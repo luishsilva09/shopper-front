@@ -1,4 +1,4 @@
-# Variaveis
+# Variáveis
 
 Url onde backend está rodando
 `VITE_API_URL = http://localhost:5002`
@@ -13,7 +13,7 @@ Clone projeto:
 
 ```
 
-Instalar dependencias:
+Instalar dependências:
 
 ```bash
 
